@@ -1,23 +1,22 @@
 # HiddenWall
 <img align="center" src="https://github.com/CoolerVoid/HiddenWall/blob/master/doc/hiddenwallCMD.png?raw=true">
 
-HiddenWall is a Linux kernel module generator for custom rules with netfilter. (block ports, Hidden mode, rootkit functions etc).
+HiddenWall is a Linux kernel module generator for custom rules with netfilter. (block ports, Hidden mode, rootkit functions, etc.).
 <img align="right" width="240" height="220" src="https://github.com/CoolerVoid/HiddenWall/blob/master/doc/wall.png">
-The motivation: on bad situation, attacker can put your iptables/ufw to fall... but if you have HiddenWall, 
-the attacker will not find the hidden kernel module that block external access, because have a hook to netfilter on 
-kernel land(think like a second layer for firewall).
+The motivation: in a bad situation, an attacker can put your iptables/ufw to fall. But if you have HiddenWall, 
+the attacker will not find the hidden kernel module that blocks external access because it has a hook to netfilter on kernel land(think like a second layer for Firewall).
 
-My beginning purpose at this project is protect my personal server, now is protect the machines of my friends.
-When i talk "friends", i say peoples that don't know how to write low level code. Using the HiddenWall you can 
+My beginning purpose at this project is to protect my server, and now it is to protect my friends' machines.
+When I talk to friends, I say peoples that don't know how to write low-level code. Using the HiddenWall, you can 
 generate your custom kernel module for your firewall configuration. 
 
-The low level programmer can write new templates for modules etc...
+The low-level programmer can write new templates for modules etc.
 
 
-First step, understand before run
+The first step, understand before the run
 --
 
-Verify if the kernel version is 3.x, 4.x or 5.x:
+Verify if the kernel version is 3.x, 4.x, or 5.x:
 ```
 uname -r
 ```
@@ -32,7 +31,7 @@ Enter the folder
 cd HiddenWall/module_generator
 ```
 
-Edit your firewall rules in directory  rules/server.yaml, the python scripts use that file to generate a new firewall module.
+Edit your firewall rules in directory rules/server.YAML, the python scripts, use that file to generate a new firewall module.
 
 ```
 $ cat rules/server.yaml
@@ -52,24 +51,24 @@ whitelist:
 
 ```
 
-If you want study the static code to generate, look the content at directory "templates".
+If you want to study the static code to generate, look at the content at directory "templates".
 
 
 
 
-Second step, generate your module
+The second step, generate your module
 --
 
-If you want generate a kernel module following your YAML file of rules, follow that command:
+If you want to generate a kernel module following your YAML file of rules, follow that command:
 
 ```
-$ python3 WallGen.py --template template/hiddenwall.c -r rules/server.yaml
+$ python3 WallGen.py --template template/hidden wall.c -r rules/server.YAML
 ```
-This generate a generic module with rules of server.yaml, if you want to use another template you can use "wall.c", so template module "hiddenwall" have option to run on hidden mode(is not visible to "# lsmod" for example).
+This action can generate a generic module with the rules of the server.YAML, if you want to use another template, you can use "wall.c", so the template module "hidden wall" has the option to run on hidden mode(is not visible to "# lsmod" for example).
 
 
 
-Third step, install your module
+The third step, install your module.
 --
 
 To test module:
@@ -78,17 +77,17 @@ To test module:
 # insmod SandWall.ko
 ```
 
-The rule of YAML to generate module is simple, drop all out to in packets, accept ports 80,443 and 53. The machine 192*.181 can connect at ports 22 and 21...
+YAML's rule to generate module is simple, drop all out to in packets, accept ports 80,443, and 53. The machine 192*.181 can connect at ports 22 and 21.
 
-if you use nmap at localhost/127.0.0.1 you can view the ports open... because rule liberate_in_2_out is true.
+If you use Nmap at localhost/127.0.0.1, you can view the ports open because rule liberate_in_2_out is true.
 
-Password to turn Firewall visible is "AbraKadabra".
+The password to turn Firewall visible is "AbraKadabra".
 
-Password to turn Firewall invisible is "Shazam".
+The password to turn the Firewall invisible is "Shazam".
 
-You need to send password for your fake device "usb14".
+You need to send the password for your fake device, "usb14".
 
-To exit module, you need turn visible at "lsmod" command ...
+To exit the module, you need to turn visible at the "lsmod" command ...
 
 ```
 # echo "AbraKadabra" > /dev/usb14
@@ -106,10 +105,10 @@ Tested on ubuntu 16 and fedora 29 at kernels "3.x","4.x" and "5.x".
 TODO
 --
 
-Suport to IPV6.
-Macro to select the interface(to use multiple modes for each interface).
-Option to remove last logs when turn hide mode.
-Option to search and remove others toolkits...
+Support to IPV6.
+Macro selects the interface(to use multiple modes for each interface).
+Option to remove last logs when turn hides mode.
+Option to search and remove other toolkits.
 Code generator to BFP...
 
 
