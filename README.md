@@ -75,7 +75,7 @@ This action can generate a generic module with the rules of the server.YAML, if 
 The third step, install your module.
 --
 
-If you use Fedora Linux install kernel packages for developer:
+If you use Fedora Linux, install kernel packages for developer:
 ```
 # dnf update
 # dnf install kernel-headers.x86_64 kernel-modules.x86_64 kernel.x86_64 kernel-devel kmod
