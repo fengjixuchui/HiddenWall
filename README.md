@@ -12,6 +12,10 @@ generate your custom kernel module for your firewall configuration.
 
 The low-level programmer can write new templates for modules etc.
 
+VIDEO DEMO:
+--
+https://www.youtube.com/watch?v=QA0jvFTULAk
+
 
 The first step, understand before the run
 --
@@ -62,7 +66,7 @@ The second step, generate your module
 If you want to generate a kernel module following your YAML file of rules, follow that command:
 
 ```
-$ python3 WallGen.py --template template/hidden wall.c -r rules/server.YAML
+$ python3 WallGen.py --template template/hiddenwall.c -r rules/server.yaml
 ```
 This action can generate a generic module with the rules of the server.YAML, if you want to use another template, you can use "wall.c", so the template module "hidden wall" has the option to run on hidden mode(is not visible to "# lsmod" for example).
 
@@ -71,6 +75,15 @@ This action can generate a generic module with the rules of the server.YAML, if 
 The third step, install your module.
 --
 
+If you use Fedora Linux install kernel packages for developer:
+```
+# dnf update
+# dnf install kernel-headers.x86_64 kernel-modules.x86_64 kernel.x86_64 kernel-devel kmod
+```
+On Ubuntu Linux:
+```
+apt install linux-headers-generic gcc make
+```
 To test module:
 ```
 # cd output; make clean; make
