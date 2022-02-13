@@ -124,6 +124,9 @@ Option to remove last logs when turn hides mode.
 Option to search and remove other toolkits.
 Code generator to BFP...
 
+## Point of attention
+The purpose of this tool is to use in pentest, take attention if you have a proper authorization before to use that. I do not have responsibility for your actions. You can use a hammer to construct a house or destroy it, choose the law path, don't be a bad guy, remember.
+
 
 References
 --
