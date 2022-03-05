@@ -118,7 +118,7 @@ Tested on ubuntu 16 and fedora 29 at kernels "3.x","4.x" and "5.x".
 TODO
 --
 
-Support to IPV6.
+Support to IPV6. 
 Macro selects the interface(to use multiple modes for each interface).
 Option to remove last logs when turn hides mode.
 Option to search and remove other toolkits.
