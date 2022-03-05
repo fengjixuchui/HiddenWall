@@ -1,7 +1,7 @@
 # HiddenWall
 <img align="center" src="https://github.com/CoolerVoid/HiddenWall/blob/master/doc/hiddenwallCMD.png?raw=true">
 
-HiddenWall is a Linux kernel module generator for custom rules with netfilter. (block ports, Hidden mode, rootkit functions, etc.).
+HiddenWall is a Linux kernel module generator for custom rules with netfilter. (block ports, Hidden mode, firewall functions, etc.).
 <img align="right" width="240" height="220" src="https://github.com/CoolerVoid/HiddenWall/blob/master/doc/wall.png">
 The motivation: in a bad situation, an attacker can put your iptables/ufw to fall. But if you have HiddenWall, 
 the attacker will not find the hidden kernel module that blocks external access because it has a hook to netfilter on kernel land(think like a second layer for Firewall).
@@ -118,11 +118,14 @@ Tested on ubuntu 16 and fedora 29 at kernels "3.x","4.x" and "5.x".
 TODO
 --
 
-Support to IPV6.
+Support to IPV6. 
 Macro selects the interface(to use multiple modes for each interface).
 Option to remove last logs when turn hides mode.
 Option to search and remove other toolkits.
 Code generator to BFP...
+
+## Point of attention
+The purpose of this tool is to use in pentest, take attention if you have a proper authorization before to use that. I do not have responsibility for your actions. You can use a hammer to construct a house or destroy it, choose the law path, don't be a bad guy, remember.
 
 
 References
