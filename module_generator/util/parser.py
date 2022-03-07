@@ -53,8 +53,8 @@ def Get_config(ConfigFile):
  e={}
  d['whitelist_code']=""
  d['whitelist_var']=""
- document = open(ConfigFile, 'r')
- parsed = yaml.load(document, Loader=yaml.FullLoader)
+ with open(ConfigFile, 'r') as file:
+  parsed = yaml.safe_load(file)
  x=0
  print("Load external config "+ConfigFile)
 
