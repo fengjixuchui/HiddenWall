@@ -7,13 +7,13 @@ To use the service file to make your LKM persistent, do this on the command line
     If you see the version number on your screen, you are running systemd - if not, you can install systemd with your Linux package manager (apt / dpkg / rpm) - most Linuxes already use systemd.
 
 2) If you have systemd installed, create a file in the directory /etc/systemd/system with the name that you want your service to be known by, for example
-    sudo vi /etc/systemd/system/hiddenwall.service  
-    https://github.com/CoolerVoid/HiddenWall/tree/main/module_generator/scripts/hiddenwall.service
+    sudo vi /etc/systemd/system/wall.service  
+    https://github.com/CoolerVoid/HiddenWall/tree/main/module_generator/scripts/wall.service
 
     And paste the contents of the service file that I sent, save that file and exit.
 
-3) To enable the service you created in step 2, type (if your file is called casper.service):
-     sudo systemctl enable casper
+3) To enable the service you created in step 2, type (if your file is called wall.service):
+     sudo systemctl enable hiddenwall
 
 4) When you next reboot your machine, check the file /var/log/syslog to make sure your service was started successfully.
 
