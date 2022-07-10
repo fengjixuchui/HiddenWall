@@ -5,7 +5,7 @@
 # save this file in /usr/local/bin/
 # change points of directory "paul" to you proper user path
 # edit to insert your user...
-LOGFILE="/home/paul/casper.log"
+LOGFILE="/home/paul/hiddenwall.log"
 # edit this part
 cd /home/paul/git/casper-fs/module_generator/output
 
@@ -20,5 +20,6 @@ echo $?
 echo "$(date): Make finished"
 
 echo "$(date): Inserting module..."
+# local of LKM file ".ko"
 insmod /home/paul/git/casper-fs/module_generator/output/sandwall.ko
 echo $?
