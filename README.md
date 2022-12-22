@@ -14,12 +14,13 @@ The low-level programmer can write new templates for modules etc.
 
 # The features
 
-* Tool to interpret YAML file and generate a C language file "Linux kernel module".
+* Tool to interpret YAML rules file and generate a C language file "Linux kernel module".
 * YAML context is a white screen to create your custom firewall in kernel land. Yes is not hard when you use HiddenWall.
 * The resource to generate the hidden kernel module, yes is invisible not even the root user can see it.
 * The resource to turn the Linux kernel module visible, passing a key to enable the context.
 * Persistence recipe with scripts, to always up HiddenWall when you boot the system.
 * Communication by device char
+
 https://github.com/CoolerVoid/HiddenWall/blob/master/module_generator/scripts/README.md
 
 # VIDEO DEMO:
