@@ -21,7 +21,7 @@ The low-level programmer can write new templates for modules etc.
 * The resource to turn the Linux kernel module visible, passing a key to enable the context.
 * Persistence recipe with scripts, to always up HiddenWall when you boot the system.
 * Communication by device char (different from other Rootkits that use signal and ioctl).
-* Random junk code injection by the generated LKM that turns each generated binary unique.
+* Random junk code injection in the generated LKM that turns each binary unique during the compilation. 
 
 
 # VIDEO DEMO:
