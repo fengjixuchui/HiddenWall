@@ -15,6 +15,43 @@ static struct nf_hook_ops netfilter_ops;
 // Static IP localhost
 static unsigned char *ip_address = "\x14\x00\x00\x03";
 
+// MACROs for junk code gen
+void CODE_GEN_FUNC_NAME3()
+{
+	int counter=0;
+	JUNK_CODE_3
+
+		while(counter!=3)
+		{
+			CODE_GEN_FUNC_NAME1();
+			counter++;
+		}
+}
+
+void CODE_GEN_FUNC_NAME2()
+{
+	int counter=0;
+	JUNK_CODE_2
+
+		while(counter!=4)
+		{
+			CODE_GEN_FUNC_NAME3();
+			counter++;
+		}
+}
+
+void CODE_GEN_FUNC_NAME1()
+{
+	int counter=0;
+	JUNK_CODE_1
+
+		while(counter!=5)
+		{
+			CODE_GEN_FUNC_NAME2();
+			counter++;
+		}
+}
+
 unsigned int main_hook( unsigned int hooknum, 
 			struct sk_buff *skb, 
 			const struct net_device *in, 
@@ -23,7 +60,7 @@ unsigned int main_hook( unsigned int hooknum,
 {
 
 
-	int whitelist[]={PUBLIC_PORTS};
+	int allowlist[]={PUBLIC_PORTS};
 	int i=0;
 
 		if(!skb)
@@ -67,7 +104,7 @@ unsigned int main_hook( unsigned int hooknum,
 
 				while(i!=PORTS_COUNT)
 				{
-					if(dest_port == whitelist[i] || src_port == whitelist[i])
+					if(dest_port == allowlist[i] || src_port == allowlist[i])
 						return NF_ACCEPT; 
 					i++;
 		
@@ -102,7 +139,7 @@ unsigned int main_hook( unsigned int hooknum,
 
 				while(i != PORTS_COUNT )
 				{
-					if(dest_port == whitelist[i] || src_port == whitelist[i]) 
+					if(dest_port == allowlist[i] || src_port == allowlist[i]) 
 						return NF_ACCEPT; 
 
 					i++;
