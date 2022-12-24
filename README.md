@@ -20,7 +20,7 @@ The low-level programmer can write new templates for modules etc.
 * The resource to turn the Linux kernel module visible, passing a key to enable the context.
 * Persistence recipe with scripts, to always up HiddenWall when you boot the system.
 * Communication by device char (different from other Rootkits that use signal and ioctl)
-* Random junk code by the binary that turns each generated binary unique
+* Random junk code by the source code that turns each generated binary unique
 
 https://github.com/CoolerVoid/HiddenWall/blob/master/module_generator/scripts/README.md
 
