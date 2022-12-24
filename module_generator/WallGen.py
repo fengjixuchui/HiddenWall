@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# WallGen v0.2'/'
+# WallGen v0.44'/'
 #You nd yaml, pyyaml modules... 
 from util import parser
 
