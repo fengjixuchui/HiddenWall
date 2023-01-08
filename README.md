@@ -1,5 +1,6 @@
 # HiddenWall
 <img align="center" src="https://github.com/CoolerVoid/HiddenWall/blob/master/doc/hiddenwallCMD.png?raw=true">
+https://antonio-cooler.gitbook.io/coolervoid-tavern/hidden-firewall-in-kernel
 
 HiddenWall is a Linux kernel module generator for custom rules with netfilter. (block ports, Hidden mode, firewall functions, etc.).
 <img align="right" width="240" height="220" src="https://github.com/CoolerVoid/HiddenWall/blob/master/doc/wall.png">
@@ -19,10 +20,9 @@ The low-level programmer can write new templates for modules etc.
 * The resource to generate the hidden kernel module, yes is invisible not even the root user can see it.
 * The resource to turn the Linux kernel module visible, passing a key to enable the context.
 * Persistence recipe with scripts, to always up HiddenWall when you boot the system.
-* Communication by device char (different from other Rootkits that use signal and ioctl)
-* Random junk code by the source code that turns each generated binary unique
+* Communication by device char (different from other Rootkits that use signal and ioctl).
+* Static random junk code injection in the generated LKM that turns each binary unique during the compilation. 
 
-https://github.com/CoolerVoid/HiddenWall/blob/master/module_generator/scripts/README.md
 
 # VIDEO DEMO:
 https://www.youtube.com/watch?v=QA0jvFTULAk
